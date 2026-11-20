@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Class Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        caption {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        th, td {
+            border: 1px solid #94a3b8;
+            padding: 12px 8px;
+        }
+
+        thead th {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        /* Day column styling */
+        tbody th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+
+        /* Vertical merged Lunch Break styling */
+        .lunch {
+            background-color: #fef3c7;
+            font-weight: bold;
+            color: #92400e;
+            letter-spacing: 2px;
+        }
+
+        /* Horizontal merged Lab/Seminar styling */
+        .lab {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-weight: bold;
+        }
+
+        .free {
+            background-color: #f8fafc;
+            color: #64748b;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <caption>B.Tech Computer Science — Weekly Class Timetable (Semester III)</caption>
+
+        <thead>
+            <tr>
+                <th scope="col">Day / Time</th>
+                <th scope="col">9:00 – 10:00</th>
+                <th scope="col">10:00 – 11:00</th>
+                <th scope="col">11:00 – 12:00</th>
+                <th scope="col">12:00 – 1:00</th>
+                <th scope="col">1:00 – 2:00</th>
+                <th scope="col">2:00 – 3:00</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- MONDAY -->
+            <tr>
+                <th scope="row">Monday</th>
+                <td>Data Structures</td>
+                <td>Discrete Math</td>
+                <td>Digital Logic</td>
+                <!-- rowspan="5" merges this cell across all 5 weekday rows -->
+                <td rowspan="5" class="lunch">L<br>U<br>N<br>C<br>H</td>
+                <!-- colspan="2" merges two consecutive afternoon slots into a 2-hour lab -->
+                <td colspan="2" class="lab">Web Development Lab (CS-Lab 1)</td>
+            </tr>
+
+            <!-- TUESDAY (Notice the Lunch cell is omitted because Monday's rowspan="5" covers it) -->
+            <tr>
+                <th scope="row">Tuesday</th>
+                <td colspan="2" class="lab">Data Structures Lab (CS-Lab 2)</td>
+                <td>Computer Org.</td>
+                <td>Discrete Math</td>
+                <td>Technical Writing</td>
+            </tr>
+
+            <!-- WEDNESDAY -->
+            <tr>
+                <th scope="row">Wednesday</th>
+                <td>Digital Logic</td>
+                <td>Data Structures</td>
+                <td>Computer Org.</td>
+                <td>Discrete Math</td>
+                <td class="free">Library / Self-Study</td>
+            </tr>
+
+            <!-- THURSDAY -->
+            <tr>
+                <th scope="row">Thursday</th>
+                <td>Computer Org.</td>
+                <td>Digital Logic</td>
+                <td>Data Structures</td>
+                <td colspan="2" class="lab">Hardware &amp; Logic Lab</td>
+            </tr>
+
+            <!-- FRIDAY -->
+            <tr>
+                <th scope="row">Friday</th>
+                <td>Discrete Math</td>
+                <td colspan="2" class="lab">Project Seminar &amp; Workshop</td>
+                <td>Technical Writing</td>
+                <td class="free">Sports / Club Activity</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

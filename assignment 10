@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Multimedia Embedding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        figure {
+            margin: 0;
+        }
+        img, video, iframe {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        audio {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML5 Multimedia Elements</h1>
+
+    <!-- 1. EMBEDDING AN IMAGE (<figure> + <img> + <figcaption>) -->
+    <h2>1. Image (&lt;img&gt;)</h2>
+    <figure>
+        <img src="https://picsum.photos/id/1018/700/350" 
+             alt="Mountain landscape with a calm lake at sunrise" 
+             width="700" 
+             height="350">
+        <figcaption>Figure 1: Responsive image wrapped in semantic &lt;figure&gt; and &lt;figcaption&gt; tags.</figcaption>
+    </figure>
+
+    <hr>
+
+    <!-- 2. EMBEDDING AN HTML5 VIDEO (<video>) -->
+    <h2>2. HTML5 Video (&lt;video&gt;)</h2>
+    <p>Includes playback controls, a preview poster image, and multiple fallback source formats:</p>
+    
+    <video width="700" height="394" controls preload="metadata" poster="https://picsum.photos/id/1015/700/394">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        Your browser does not support the HTML5 video tag.
+    </video>
+
+    <hr>
+
+    <!-- 3. EMBEDDING AN HTML5 AUDIO FILE (<audio>) -->
+    <h2>3. HTML5 Audio (&lt;audio&gt;)</h2>
+    <p>Displays the browser's built-in audio player with play, pause, scrub, and volume controls:</p>
+    
+    <audio controls preload="metadata">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        Your browser does not support the HTML5 audio tag.
+    </audio>
+
+    <hr>
+
+    <!-- 4. EMBEDDING A YOUTUBE VIDEO (<iframe>) -->
+    <h2>4. YouTube Video (&lt;iframe&gt;)</h2>
+    <p>External video platforms like YouTube are embedded using an <code>&lt;iframe&gt;</code> pointing to the <code>/embed/VIDEO_ID</code> URL:</p>
+    
+    <iframe width="700" 
+            height="394" 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+
+</body>
+
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> adbe35e6cd645bbbe912093e040c255ba223e1f6

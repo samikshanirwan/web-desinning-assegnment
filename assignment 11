@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- 1. LANGUAGE ATTRIBUTE: Tells screen readers which voice/pronunciation rules to use -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible HTML5 Page Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* 2. SKIP LINK STYLING: Hidden off-screen until focused via keyboard (Tab key) */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 16px;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 16px; /* Slides into view when the user presses Tab */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 16px;
+            background-color: #f1f5f9;
+            padding: 12px;
+        }
+
+        /* Visible focus outline for keyboard navigation */
+        a:focus, button:focus, input:focus {
+            outline: 3px solid #0284c7;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 2. SKIP LINK: Must be the very first focusable element inside <body> -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <!-- ARIA LABEL ON LANDMARK: Distinguishes this navigation bar from any footer nav -->
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#tutorials">Tutorials</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Target for the skip link; tabindex="-1" ensures programmatic focus works in all browsers -->
+    <main id="main-content" tabindex="-1">
+
+        <!-- 3. PROPER HEADING HIERARCHY: Single <h1> followed sequentially by <h2> and <h3> -->
+        <h1>Web Accessibility Fundamentals</h1>
+        <p>Building inclusive web pages ensures everyone—including screen reader and keyboard users—can navigate your content.</p>
+
+        <section id="articles">
+            <h2>1. Descriptive Alt Text</h2>
+            
+            <!-- 4. ALT TEXT: Describes the meaning/context of the image, not "image of..." -->
+            <figure>
+                <img src="https://picsum.photos/id/1/600/250" 
+                     alt="Developer typing HTML code on a laptop at a wooden desk" 
+                     width="600" 
+                     height="250">
+                <figcaption>Meaningful alt text conveys visual context to screen readers.</figcaption>
+            </figure>
+
+            <!-- Decorative images use an empty alt="" so screen readers skip them -->
+            <img src="https://via.placeholder.com/600x10/cbd5e1/cbd5e1" alt="">
+        </section>
+
+        <section id="tutorials">
+            <h2>2. ARIA Labels for Non-Text Controls</h2>
+            <p>When a button or input lacks visible text, use <code>aria-label</code> or <code>aria-labelledby</code>:</p>
+
+            <!-- ARIA LABEL ON FORM & BUTTON: Provides accessible names for icon-only controls -->
+            <form role="search" aria-label="Site Search">
+                <input type="search" aria-label="Search articles" placeholder="Search...">
+                <button type="submit" aria-label="Submit search">&#128269;</button>
+            </form>
+
+            <h3>Sub-section Heading (h3)</h3>
+            <p>Notice how headings step down logically from <code>&lt;h1&gt;</code> &rarr; <code>&lt;h2&gt;</code> &rarr; <code>&lt;h3&gt;</code> without skipping levels.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Accessible Web Demo</p>
+    </footer>
+
+</body>
+
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> adbe35e6cd645bbbe912093e040c255ba223e1f6

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML List Types</title>
+</head>
+
+<body>
+
+    <!-- 1. UNORDERED LIST (Bulleted) -->
+    <h2>1. Unordered List (&lt;ul&gt;)</h2>
+    <p>Used when the order of items does not matter:</p>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <hr>
+
+    <!-- 2. ORDERED LIST (Numbered) -->
+    <h2>2. Ordered List (&lt;ol&gt;)</h2>
+    <p>Used when sequence or ranking matters:</p>
+    <ol>
+        <li>Open VS Code</li>
+        <li>Create an <code>index.html</code> file</li>
+        <li>Write your HTML code</li>
+        <li>Open the file in a browser</li>
+    </ol>
+
+    <!-- Optional attributes on <ol> -->
+    <p>Ordered list using Roman numerals (<code>type="I"</code>) starting at 3 (<code>start="3"</code>):</p>
+    <ol type="I" start="3">
+        <li>Third Chapter</li>
+        <li>Fourth Chapter</li>
+    </ol>
+
+    <hr>
+
+    <!-- 3. DESCRIPTION LIST (Key-Value / Glossary) -->
+    <h2>3. Description List (&lt;dl&gt;)</h2>
+    <p>Used for terms and their definitions or descriptions:</p>
+    <dl>
+        <dt><strong>HTML</strong></dt>
+        <dd>HyperText Markup Language — defines the structure of a webpage.</dd>
+
+        <dt><strong>CSS</strong></dt>
+        <dd>Cascading Style Sheets — controls the visual layout and styling.</dd>
+
+        <dt><strong>DOM</strong></dt>
+        <dd>Document Object Model — the browser's tree representation of the page.</dd>
+    </dl>
+
+    <hr>
+
+    <!-- BONUS: NESTED LIST -->
+    <h2>4. Nested List Example</h2>
+    <ul>
+        <li>Frontend Technologies
+            <ol>
+                <li>Structure (HTML)</li>
+                <li>Styling (CSS)</li>
+            </ol>
+        </li>
+        <li>Backend Technologies</li>
+    </ul>
+
+</body>
+
+</html>

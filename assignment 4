@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block vs. Inline Elements</title>
+    <style>
+        /* Adding backgrounds and borders so you can visually see the boundaries */
+        .block-demo {
+            background-color: #d1e7dd;
+            border: 2px solid #0f5132;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .inline-demo {
+            background-color: #fff3cd;
+            border: 2px solid #664d03;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. BLOCK-LEVEL ELEMENTS -->
+    <h2>1. Block-Level Elements</h2>
+    <p>Block elements always start on a new line and stretch across the full available width.</p>
+
+    <div class="block-demo">This is a &lt;div&gt; (Block element)</div>
+    <p class="block-demo">This is a &lt;p&gt; (Block element) — notice how it drops to a new line below the div.</p>
+    <h3 class="block-demo">This is an &lt;h3&gt; (Block element)</h3>
+
+    <hr>
+
+    <!-- 2. INLINE ELEMENTS -->
+    <h2>2. Inline Elements</h2>
+    <p>Inline elements sit side-by-side on the same line and only take up as much width as their content needs.</p>
+
+    <span class="inline-demo">First &lt;span&gt;</span>
+    <strong class="inline-demo">Second &lt;strong&gt;</strong>
+    <em class="inline-demo">Third &lt;em&gt;</em>
+    <a href="#" class="inline-demo">Fourth &lt;a&gt; link</a>
+
+    <hr>
+
+    <!-- 3. MIXING BLOCK AND INLINE ELEMENTS -->
+    <h2>3. Nesting Inline Inside Block</h2>
+    <div class="block-demo">
+        This entire green box is a block-level <code>&lt;div&gt;</code>. Inside it, you can place inline elements like 
+        <span class="inline-demo">a &lt;span&gt;</span> or <mark class="inline-demo">a &lt;mark&gt;</mark> 
+        without breaking the flow of the sentence.
+    </div>
+
+</body>
+
+</html>

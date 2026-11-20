@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Tables &amp; Responsive Horizontal Scroll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+
+        /* 1. RESPONSIVE WRAPPER: Enables horizontal scrolling when table exceeds screen width */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling on mobile */
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            margin-top: 16px;
+        }
+
+        /* Outer Wide Table */
+        .outer-table {
+            width: 100%;
+            min-width: 780px; /* Forces horizontal scroll on screens narrower than 780px */
+            border-collapse: collapse;
+        }
+
+        .outer-table th,
+        .outer-table td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .outer-table thead th {
+            background-color: #1e293b;
+            color: #ffffff;
+            white-space: nowrap; /* Prevents header titles from wrapping awkwardly */
+        }
+
+        /* 2. NESTED INNER TABLE STYLING */
+        .inner-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f8fafc;
+            font-size: 0.9rem;
+        }
+
+        .inner-table th,
+        .inner-table td {
+            border: 1px solid #94a3b8;
+            padding: 6px 10px;
+        }
+
+        .inner-table th {
+            background-color: #e2e8f0;
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Nested Table &amp; Responsive Scroll</h1>
+    <p>Resize your browser window below <strong>780px</strong> (or open DevTools mobile view) to see the wide table scroll horizontally without breaking the page layout.</p>
+
+    <!-- RESPONSIVE SCROLL CONTAINER -->
+    <div class="table-responsive" role="region" aria-label="Student Semester Grades" tabindex="0">
+        
+        <table class="outer-table">
+            <thead>
+                <tr>
+                    <th scope="col">Roll No.</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Subject-Wise Marks (Nested Table)</th>
+                    <th scope="col">Attendance</th>
+                    <th scope="col">Result</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>CS-201</td>
+                    <td>Aarav Sharma</td>
+                    <td>Computer Science</td>
+                    
+                    <!-- CELL CONTAINING A COMPLETE NESTED TABLE -->
+                    <td>
+                        <table class="inner-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HTML5 &amp; CSS3</td>
+                                    <td>92 / 100</td>
+                                </tr>
+                                <tr>
+                                    <td>Data Structures</td>
+                                    <td>88 / 100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                    <td>94%</td>
+                    <td><strong>Pass</strong></td>
+                </tr>
+
+                <tr>
+                    <td>CS-202</td>
+                    <td>Priya Verma</td>
+                    <td>Computer Science</td>
+                    
+                    <!-- SECOND NESTED TABLE -->
+                    <td>
+                        <table class="inner-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HTML5 &amp; CSS3</td>
+                                    <td>95 / 100</td>
+                                </tr>
+                                <tr>
+                                    <td>Data Structures</td>
+                                    <td>91 / 100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                    <td>96%</td>
+                    <td><strong>Pass</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

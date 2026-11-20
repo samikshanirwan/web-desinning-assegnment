@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Native Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 16px;
+            color: #0f172a;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        small {
+            display: block;
+            color: #475569;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #94a3b8;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* Visual feedback using CSS pseudo-classes */
+        input:focus:invalid {
+            border-color: #dc2626; /* Red border when actively invalid */
+            outline: none;
+        }
+
+        input:valid {
+            border-color: #16a34a; /* Green border once validation rules pass */
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #0284c7;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Exam Registration</h1>
+    <p>Try submitting empty or improperly formatted values to trigger built-in browser validation messages.</p>
+
+    <!-- 1. ACTION & METHOD: Specifies where and how validated form data is sent -->
+    <form action="/submit-registration" method="post">
+
+        <!-- 2. REQUIRED + MINLENGTH + MAXLENGTH -->
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <small>Required; must be between 4 and 15 characters.</small>
+            <input type="text" 
+                   id="username" 
+                   name="username" 
+                   minlength="4" 
+                   maxlength="15" 
+                   placeholder="e.g., rohan_cs" 
+                   required>
+        </div>
+
+        <!-- 3. PATTERN (Regex Validation + title hint) -->
+        <div class="form-group">
+            <label for="roll-no">University Roll Number:</label>
+            <small>Format: 2 uppercase letters followed by 4 digits (e.g., CS1042).</small>
+            <input type="text" 
+                   id="roll-no" 
+                   name="rollNo" 
+                   pattern="[A-Z]{2}[0-9]{4}" 
+                   title="Enter 2 uppercase letters followed by 4 digits (e.g., CS1042)" 
+                   placeholder="CS1042" 
+                   required>
+        </div>
+
+        <!-- 4. PATTERN FOR MOBILE NUMBER -->
+        <div class="form-group">
+            <label for="phone">10-Digit Mobile Number:</label>
+            <small>Must start with 6–9 and contain exactly 10 digits.</small>
+            <input type="tel" 
+                   id="phone" 
+                   name="phone" 
+                   pattern="[6-9][0-9]{9}" 
+                   title="Enter a valid 10-digit mobile number starting with 6, 7, 8, or 9" 
+                   placeholder="9876543210" 
+                   required>
+        </div>
+
+        <!-- 5. MIN & MAX ON NUMBERS -->
+        <div class="form-group">
+            <label for="semester">Current Semester:</label>
+            <small>Allowed range: 1 to 8.</small>
+            <input type="number" 
+                   id="semester" 
+                   name="semester" 
+                   min="1" 
+                   max="8" 
+                   placeholder="3" 
+                   required>
+        </div>
+
+        <!-- 6. MIN & MAX ON DATES -->
+        <div class="form-group">
+            <label for="exam-date">Preferred Exam Date:</label>
+            <small>Select a date between 2026-12-01 and 2026-12-31.</small>
+            <input type="date" 
+                   id="exam-date" 
+                   name="examDate" 
+                   min="2026-12-01" 
+                   max="2026-12-31" 
+                   required>
+        </div>
+
+        <button type="submit">Validate &amp; Submit</button>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Links &amp; Attributes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 16px;
+        }
+        .spacer {
+            height: 550px;
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        img {
+            border-radius: 8px;
+            border: 2px solid #0284c7;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <h1>HTML5 Link Types &amp; Attributes</h1>
+
+    <!-- 1. INTERNAL LINKS -->
+    <h2>1. Internal Links</h2>
+    <ul>
+        <!-- Fragment / Same-Page Anchor Link -->
+        <li>
+            <a href="#bottom-section" title="Scroll down to the footer section">
+                Jump to Bottom Section (Same-Page Anchor)
+            </a>
+        </li>
+
+        <!-- Relative Path to Another Local HTML File -->
+        <li>
+            <a href="timetable.html" title="Open local timetable page">
+                View Class Timetable (Local Relative File)
+            </a>
+        </li>
+
+        <!-- Local File Download Link -->
+        <li>
+            <a href="syllabus.pdf" download="CS_Syllabus_2026.pdf" title="Download PDF file">
+                Download Course Syllabus (<code>download</code> attribute)
+            </a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <!-- 2. EXTERNAL LINKS -->
+    <h2>2. External Links</h2>
+    <p>
+        <!-- target="_blank" opens in a new tab; rel="noopener noreferrer" prevents tabnabbing -->
+        Check your markup validity using the 
+        <a href="https://validator.w3.org/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           title="Opens W3C Validator in a new browser tab">
+           W3C Markup Validation Service
+        </a>.
+    </p>
+
+    <hr>
+
+    <!-- 3. EMAIL LINKS -->
+    <h2>3. Email Links (<code>mailto:</code>)</h2>
+    <ul>
+        <!-- Basic Email Link -->
+        <li>
+            <a href="mailto:admissions@example.edu">
+                Email Admissions Office (Basic)
+            </a>
+        </li>
+
+        <!-- Email Link with Pre-filled Subject, CC, and Body -->
+        <li>
+            <a href="mailto:hod.cs@example.edu?cc=advisor@example.edu&subject=Lab%20Schedule%20Query&body=Respected%20Sir%2C%0A%0AI%20have%20a%20question%20regarding%20the%20timetable.">
+                Email Department Head with Subject &amp; Body
+            </a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <!-- 4. IMAGE LINKS -->
+    <h2>4. Image Links</h2>
+    <p>Wrapping an <code>&lt;img&gt;</code> inside an <code>&lt;a&gt;</code> tag turns the image into a clickable link:</p>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Visit MDN HTML Documentation">
+        <img src="https://picsum.photos/id/0/360/160" 
+             alt="Laptop displaying web development workspace" 
+             title="Click to open MDN HTML Documentation"
+             width="360" 
+             height="160">
+    </a>
+
+    <!-- Spacer box to demonstrate same-page vertical jumping -->
+    <div class="spacer">
+        <p><em>Scroll down or click "Jump to Bottom Section" above to test the internal anchor link...</em></p>
+    </div>
+
+    <!-- TARGET ELEMENT FOR SAME-PAGE ANCHOR -->
+    <footer id="bottom-section">
+        <h3>Bottom Section (<code>id="bottom-section"</code>)</h3>
+        <p>You navigated directly to this section using <code>href="#bottom-section"</code>.</p>
+        <p><a href="#top">&uarr; Back to Top</a></p>
+    </footer>
+
+</body>
+
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> adbe35e6cd645bbbe912093e040c255ba223e1f6

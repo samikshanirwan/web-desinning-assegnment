@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Quotes, Citations &amp; Abbreviations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 750px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        blockquote {
+            background-color: #f8fafc;
+            border-left: 4px solid #0284c7;
+            margin: 16px 0;
+            padding: 12px 20px;
+        }
+        abbr {
+            cursor: help; /* Shows a question mark cursor on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Quotes, Citations &amp; Abbreviations</h1>
+
+    <!-- 1. BLOCK QUOTES (<blockquote>) -->
+    <h2>1. Block-Level Quotations (&lt;blockquote&gt;)</h2>
+    <p>Used for longer, multi-line excerpts from an external source. The <code>cite</code> attribute stores the source URL:</p>
+    
+    <blockquote cite="https://www.w3.org/Mission.html">
+        <p>"The social value of the Web is that it enables human communication, commerce, and opportunities to share knowledge."</p>
+        <footer>— <cite>World Wide Web Consortium (W3C)</cite></footer>
+    </blockquote>
+
+    <hr>
+
+    <!-- 2. INLINE QUOTES (<q>) -->
+    <h2>2. Short Inline Quotations (&lt;q&gt;)</h2>
+    <p>Used for short quotes inside a sentence. Browsers automatically insert quotation marks around the text:</p>
+    <p>
+        Tim Berners-Lee famously said, 
+        <q cite="https://www.w3.org/People/Berners-Lee/">The power of the Web is in its universality.</q>
+    </p>
+
+    <hr>
+
+    <!-- 3. CITATIONS (<cite>) -->
+    <h2>3. Citations for Creative Works (&lt;cite&gt;)</h2>
+    <p>Used to reference the title of a book, research paper, movie, website, or painting (renders in italics by default):</p>
+    <p>
+        To learn more about web standards, read the book 
+        <cite>HTML &amp; CSS: Design and Build Websites</cite> by Jon Duckett.
+    </p>
+
+    <hr>
+
+    <!-- 4. ABBREVIATIONS & ACRONYMS (<abbr>) -->
+    <h2>4. Abbreviations &amp; Acronyms (&lt;abbr&gt;)</h2>
+    <p>Hover your mouse over the underlined abbreviations below to view their full expansions via the <code>title</code> attribute:</p>
+    <p>
+        The <abbr title="World Wide Web Consortium">W3C</abbr> maintains standards for 
+        <abbr title="HyperText Markup Language">HTML</abbr> and 
+        <abbr title="Cascading Style Sheets">CSS</abbr>, which are transmitted over 
+        <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>.
+    </p>
+
+    <hr>
+
+    <!-- BONUS: DEFINING INSTANCE (<dfn>) -->
+    <h2>5. Defining Terms (&lt;dfn&gt;)</h2>
+    <p>Used to mark the exact moment a new technical term is being defined in a sentence:</p>
+    <p>
+        <dfn><abbr title="Application Programming Interface">API</abbr></dfn> is a set of rules that allows different software applications to communicate with each other.
+    </p>
+
+</body>
+
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> adbe35e6cd645bbbe912093e040c255ba223e1f6

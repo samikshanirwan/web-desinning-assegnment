@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Navigation Menu</title>
+    <style>
+        /* Reset default body margin so the navbar sits flush at the top */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 1. Style the outer <nav> container */
+        .navbar {
+            background-color: #1e293b;
+        }
+
+        /* 2. Remove bullets/spacing and align items horizontally */
+        .nav-list {
+            list-style-type: none; /* Removes default bullet points */
+            margin: 0;             /* Removes default top/bottom margin */
+            padding: 0;            /* Removes default left indentation */
+            display: flex;         /* Places <li> items side-by-side in a row */
+        }
+
+        /* 3. Style the <a> links inside each list item */
+        .nav-list li a {
+            display: block;        /* Makes the entire padded area clickable */
+            color: #ffffff;
+            text-decoration: none; /* Removes default link underline */
+            padding: 16px 24px;
+            transition: background-color 0.2s ease;
+        }
+
+        /* 4. Add hover and active state feedback */
+        .nav-list li a:hover {
+            background-color: #334155;
+        }
+
+        .nav-list li a.active {
+            background-color: #0284c7;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Semantic <nav> wrapper containing an unordered list of links -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#syllabus">Syllabus</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding: 20px;">
+        <h1>Welcome to the Portal</h1>
+        <p>The unordered list above is now styled as a horizontal navigation bar.</p>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Workshop Portal — Semantic HTML5 Capstone</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #0f172a;
+            background-color: #f8fafc;
+        }
+
+        /* Skip Link for Keyboard Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 16px;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        /* Header & Horizontal Navigation */
+        header {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 20px 24px 0;
+        }
+
+        header h1 {
+            margin: 0 0 6px;
+            font-size: 1.6rem;
+        }
+
+        header p {
+            margin: 0 0 16px;
+            color: #cbd5e1;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 16px;
+            background-color: #1e293b;
+            border-radius: 6px 6px 0 0;
+        }
+
+        nav a:hover {
+            background-color: #0284c7;
+        }
+
+        /* Main Two-Column Semantic Grid */
+        .container {
+            max-width: 1050px;
+            margin: 24px auto;
+            padding: 0 16px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section,
+        aside {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        /* Responsive Table Styling */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        caption {
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        thead th {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tfoot td,
+        tfoot th {
+            background-color: #e2e8f0;
+            font-weight: bold;
+        }
+
+        /* Validated Form Styling */
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #0284c7;
+            padding: 0 6px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px;
+            border: 2px solid #94a3b8;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        input:focus:invalid,
+        select:focus:invalid {
+            border-color: #dc2626;
+            outline: none;
+        }
+
+        input:valid {
+            border-color: #16a34a;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #0284c7;
+            color: #ffffff;
+        }
+
+        button[type="reset"] {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Keyboard Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- 1. SEMANTIC HEADER & NAVIGATION -->
+    <header>
+        <h1>Department of Computer Science — Tech Workshops 2026</h1>
+        <p>Hands-on developer training sessions for undergraduate students</p>
+
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li><a href="#schedule">Workshop Schedule</a></li>
+                <li><a href="#register">Registration Form</a></li>
+                <li><a href="#guidelines">Guidelines</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. SEMANTIC MAIN CONTENT AREA -->
+    <div class="container">
+        <main id="main-content" tabindex="-1">
+
+            <!-- SECTION 1: SEMANTIC DATA TABLE -->
+            <section id="schedule" aria-labelledby="schedule-heading">
+                <h2 id="schedule-heading">Upcoming Workshop Schedule</h2>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>December 2026 Lab Tracks &amp; Seat Availability</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Workshop Title</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Seats Left</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>WS-101</td>
+                                <td>Semantic HTML5 &amp; Accessibility</td>
+                                <td>2026-12-05</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>WS-102</td>
+                                <td>Responsive CSS Grid &amp; Flexbox</td>
+                                <td>2026-12-12</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>WS-103</td>
+                                <td>Modern JavaScript &amp; DOM APIs</td>
+                                <td>2026-12-19</td>
+                                <td>12</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="3">Total Available Seats Across All Tracks</th>
+                                <td>35</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 2: VALIDATED REGISTRATION FORM -->
+            <section id="register" aria-labelledby="register-heading">
+                <h2 id="register-heading">Student Workshop Registration</h2>
+
+                <form action="/register-workshop" method="post">
+                    <fieldset>
+                        <legend>Student Identification</legend>
+
+                        <div class="form-group">
+                            <label for="student-name">Full Name (3–40 characters):</label>
+                            <input type="text"
+                                   id="student-name"
+                                   name="studentName"
+                                   minlength="3"
+                                   maxlength="40"
+                                   placeholder="e.g., Kabir Mehta"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roll-number">University Roll Number (Format: CS1024):</label>
+                            <input type="text"
+                                   id="roll-number"
+                                   name="rollNumber"
+                                   pattern="[A-Z]{2}[0-9]{4}"
+                                   title="Enter 2 uppercase letters followed by 4 digits (e.g., CS1024)"
+                                   placeholder="CS1024"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="student-email">College Email:</label>
+                            <input type="email"
+                                   id="student-email"
+                                   name="studentEmail"
+                                   placeholder="kabir@college.edu"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="semester">Current Semester (1–8):</label>
+                            <input type="number"
+                                   id="semester"
+                                   name="semester"
+                                   min="1"
+                                   max="8"
+                                   placeholder="3"
+                                   required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Session Selection</legend>
+
+                        <div class="form-group">
+                            <label for="workshop-choice">Choose Workshop Track:</label>
+                            <select id="workshop-choice" name="workshopChoice" required>
+                                <option value="">-- Select a Workshop --</option>
+                                <option value="WS-101">WS-101: Semantic HTML5 &amp; Accessibility</option>
+                                <option value="WS-102">WS-102: Responsive CSS Grid &amp; Flexbox</option>
+                                <option value="WS-103">WS-103: Modern JavaScript &amp; DOM APIs</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferred-date">Preferred Attendance Date (Dec 2026):</label>
+                            <input type="date"
+                                   id="preferred-date"
+                                   name="preferredDate"
+                                   min="2026-12-01"
+                                   max="2026-12-31"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Special Requirements (Optional, max 200 chars):</label>
+                            <textarea id="notes"
+                                      name="notes"
+                                      rows="3"
+                                      maxlength="200"
+                                      placeholder="Mention if you need a lab workstation or accessibility accommodations..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <button type="submit">Complete Registration</button>
+                        <button type="reset">Clear Form</button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+
+        <!-- 3. SEMANTIC SIDEBAR (<aside> & <article>) -->
+        <aside id="guidelines" aria-label="Workshop Prerequisites and Contact">
+            <article>
+                <h2>Lab Prerequisites</h2>
+                <ul>
+                    <li>Install <strong>VS Code</strong> before the session.</li>
+                    <li>Bring your college ID card for lab entry.</li>
+                    <li>Basic familiarity with HTML tags is recommended.</li>
+                </ul>
+            </article>
+
+            <hr>
+
+            <article>
+                <h2>Coordinator Contact</h2>
+                <p>For schedule queries, email <a href="mailto:workshops.cs@college.edu">workshops.cs@college.edu</a>.</p>
+                <p><a href="#top">&uarr; Back to Top</a></p>
+            </article>
+        </aside>
+    </div>
+
+    <!-- 4. SEMANTIC FOOTER -->
+    <footer>
+        <p>&copy; 2026 Department of Computer Science. Built with Semantic HTML5.</p>
+    </footer>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Workshop Portal — Semantic HTML5 Capstone</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #0f172a;
+            background-color: #f8fafc;
+        }
+
+        /* Skip Link for Keyboard Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 16px;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        /* Header & Horizontal Navigation */
+        header {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 20px 24px 0;
+        }
+
+        header h1 {
+            margin: 0 0 6px;
+            font-size: 1.6rem;
+        }
+
+        header p {
+            margin: 0 0 16px;
+            color: #cbd5e1;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 16px;
+            background-color: #1e293b;
+            border-radius: 6px 6px 0 0;
+        }
+
+        nav a:hover {
+            background-color: #0284c7;
+        }
+
+        /* Main Two-Column Semantic Grid */
+        .container {
+            max-width: 1050px;
+            margin: 24px auto;
+            padding: 0 16px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section,
+        aside {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        /* Responsive Table Styling */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        caption {
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        thead th {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tfoot td,
+        tfoot th {
+            background-color: #e2e8f0;
+            font-weight: bold;
+        }
+
+        /* Validated Form Styling */
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #0284c7;
+            padding: 0 6px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px;
+            border: 2px solid #94a3b8;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        input:focus:invalid,
+        select:focus:invalid {
+            border-color: #dc2626;
+            outline: none;
+        }
+
+        input:valid {
+            border-color: #16a34a;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #0284c7;
+            color: #ffffff;
+        }
+
+        button[type="reset"] {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Keyboard Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- 1. SEMANTIC HEADER & NAVIGATION -->
+    <header>
+        <h1>Department of Computer Science — Tech Workshops 2026</h1>
+        <p>Hands-on developer training sessions for undergraduate students</p>
+
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li><a href="#schedule">Workshop Schedule</a></li>
+                <li><a href="#register">Registration Form</a></li>
+                <li><a href="#guidelines">Guidelines</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. SEMANTIC MAIN CONTENT AREA -->
+    <div class="container">
+        <main id="main-content" tabindex="-1">
+
+            <!-- SECTION 1: SEMANTIC DATA TABLE -->
+            <section id="schedule" aria-labelledby="schedule-heading">
+                <h2 id="schedule-heading">Upcoming Workshop Schedule</h2>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>December 2026 Lab Tracks &amp; Seat Availability</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Workshop Title</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Seats Left</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>WS-101</td>
+                                <td>Semantic HTML5 &amp; Accessibility</td>
+                                <td>2026-12-05</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>WS-102</td>
+                                <td>Responsive CSS Grid &amp; Flexbox</td>
+                                <td>2026-12-12</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>WS-103</td>
+                                <td>Modern JavaScript &amp; DOM APIs</td>
+                                <td>2026-12-19</td>
+                                <td>12</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="3">Total Available Seats Across All Tracks</th>
+                                <td>35</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 2: VALIDATED REGISTRATION FORM -->
+            <section id="register" aria-labelledby="register-heading">
+                <h2 id="register-heading">Student Workshop Registration</h2>
+
+                <form action="/register-workshop" method="post">
+                    <fieldset>
+                        <legend>Student Identification</legend>
+
+                        <div class="form-group">
+                            <label for="student-name">Full Name (3–40 characters):</label>
+                            <input type="text"
+                                   id="student-name"
+                                   name="studentName"
+                                   minlength="3"
+                                   maxlength="40"
+                                   placeholder="e.g., Kabir Mehta"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roll-number">University Roll Number (Format: CS1024):</label>
+                            <input type="text"
+                                   id="roll-number"
+                                   name="rollNumber"
+                                   pattern="[A-Z]{2}[0-9]{4}"
+                                   title="Enter 2 uppercase letters followed by 4 digits (e.g., CS1024)"
+                                   placeholder="CS1024"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="student-email">College Email:</label>
+                            <input type="email"
+                                   id="student-email"
+                                   name="studentEmail"
+                                   placeholder="kabir@college.edu"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="semester">Current Semester (1–8):</label>
+                            <input type="number"
+                                   id="semester"
+                                   name="semester"
+                                   min="1"
+                                   max="8"
+                                   placeholder="3"
+                                   required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Session Selection</legend>
+
+                        <div class="form-group">
+                            <label for="workshop-choice">Choose Workshop Track:</label>
+                            <select id="workshop-choice" name="workshopChoice" required>
+                                <option value="">-- Select a Workshop --</option>
+                                <option value="WS-101">WS-101: Semantic HTML5 &amp; Accessibility</option>
+                                <option value="WS-102">WS-102: Responsive CSS Grid &amp; Flexbox</option>
+                                <option value="WS-103">WS-103: Modern JavaScript &amp; DOM APIs</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferred-date">Preferred Attendance Date (Dec 2026):</label>
+                            <input type="date"
+                                   id="preferred-date"
+                                   name="preferredDate"
+                                   min="2026-12-01"
+                                   max="2026-12-31"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Special Requirements (Optional, max 200 chars):</label>
+                            <textarea id="notes"
+                                      name="notes"
+                                      rows="3"
+                                      maxlength="200"
+                                      placeholder="Mention if you need a lab workstation or accessibility accommodations..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <button type="submit">Complete Registration</button>
+                        <button type="reset">Clear Form</button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+
+        <!-- 3. SEMANTIC SIDEBAR (<aside> & <article>) -->
+        <aside id="guidelines" aria-label="Workshop Prerequisites and Contact">
+            <article>
+                <h2>Lab Prerequisites</h2>
+                <ul>
+                    <li>Install <strong>VS Code</strong> before the session.</li>
+                    <li>Bring your college ID card for lab entry.</li>
+                    <li>Basic familiarity with HTML tags is recommended.</li>
+                </ul>
+            </article>
+
+            <hr>
+
+            <article>
+                <h2>Coordinator Contact</h2>
+                <p>For schedule queries, email <a href="mailto:workshops.cs@college.edu">workshops.cs@college.edu</a>.</p>
+                <p><a href="#top">&uarr; Back to Top</a></p>
+            </article>
+        </aside>
+    </div>
+
+    <!-- 4. SEMANTIC FOOTER -->
+    <footer>
+        <p>&copy; 2026 Department of Computer Science. Built with Semantic HTML5.</p>
+    </footer>
+
+</body>
+
+</html>

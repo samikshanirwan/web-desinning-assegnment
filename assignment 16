@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdowns, Textarea &amp; Button Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 16px;
+            color: #0f172a;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #94a3b8;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical; /* Lets users resize height without breaking layout width */
+        }
+
+        .button-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #0284c7;
+            color: #ffffff;
+        }
+
+        .btn-reset {
+            background-color: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .btn-custom {
+            background-color: #10b981;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Feedback &amp; Support Form</h1>
+
+    <form action="#" method="post">
+
+        <!-- 1. DROPDOWN MENU (<select> with <optgroup> categories) -->
+        <div class="form-group">
+            <label for="department">Select Department / Topic:</label>
+            <select id="department" name="department" required>
+                <option value="">-- Please choose an option --</option>
+                
+                <optgroup label="Academic Support">
+                    <option value="syllabus">Course Syllabus &amp; Materials</option>
+                    <option value="labs">Lab Assignments &amp; Grading</option>
+                </optgroup>
+
+                <optgroup label="Technical Support">
+                    <option value="portal">Student Portal Login</option>
+                    <option value="vscode">VS Code / Environment Setup</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- 2. MULTI-LINE TEXT BOX (<textarea>) -->
+        <div class="form-group">
+            <label for="message">Detailed Message:</label>
+            <textarea id="message" 
+                      name="message" 
+                      rows="5" 
+                      cols="50" 
+                      maxlength="500"
+                      placeholder="Describe your question or feedback in detail (up to 500 characters)..." 
+                      required></textarea>
+        </div>
+
+        <!-- 3. DIFFERENT BUTTON TYPES -->
+        <div class="button-row">
+            <!-- Submits the form data to the server -->
+            <button type="submit" class="btn-submit">Submit Form</button>
+
+            <!-- Clears all fields back to their initial default values -->
+            <button type="reset" class="btn-reset">Reset Fields</button>
+
+            <!-- Generic clickable button for custom JavaScript actions (does not submit or reset) -->
+            <button type="button" class="btn-custom" onclick="alert('Draft saved locally!')">
+                Save Draft
+            </button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

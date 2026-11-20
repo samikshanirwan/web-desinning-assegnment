@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Form with Input Types, Labels &amp; Fieldset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 0 16px;
+            color: #0f172a;
+        }
+
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8fafc;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0 8px;
+            color: #0284c7;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        /* Block labels stack cleanly above text inputs */
+        .form-group > label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #94a3b8;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        /* Keep radio and checkbox labels inline next to their boxes */
+        .inline-options label {
+            display: inline-block;
+            margin-right: 16px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button[type="submit"] {
+            background-color: #0284c7;
+            color: #ffffff;
+        }
+
+        button[type="reset"] {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Course Registration Form</h1>
+
+    <form action="#" method="post">
+
+        <!-- FIELDSET 1: PERSONAL DETAILS -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="form-group">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="fullName" placeholder="e.g., Ananya Singh" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="ananya@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Create Password:</label>
+                <input type="password" id="password" name="password" minlength="8" placeholder="Minimum 8 characters" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="16" max="99" placeholder="18">
+            </div>
+        </fieldset>
+
+        <!-- FIELDSET 2: COURSE PREFERENCES -->
+        <fieldset>
+            <legend>Course &amp; Track Preferences</legend>
+
+            <!-- Dropdown Select -->
+            <div class="form-group">
+                <label for="track">Select Track:</label>
+                <select id="track" name="track">
+                    <option value="">-- Choose a Specialization --</option>
+                    <option value="frontend">Frontend Web Development</option>
+                    <option value="backend">Backend Systems &amp; APIs</option>
+                    <option value="fullstack">Full-Stack Engineering</option>
+                </select>
+            </div>
+
+            <!-- Radio Buttons (Mutually exclusive: share the same 'name') -->
+            <div class="form-group inline-options">
+                <label>Preferred Mode:</label>
+                <input type="radio" id="mode-online" name="mode" value="online" checked>
+                <label for="mode-online">Online Live</label>
+
+                <input type="radio" id="mode-campus" name="mode" value="campus">
+                <label for="mode-campus">On-Campus</label>
+            </div>
+
+            <!-- Checkboxes (Multiple selections allowed) -->
+            <div class="form-group inline-options">
+                <label>Topics of Interest:</label>
+                <input type="checkbox" id="topic-html" name="topics" value="html5" checked>
+                <label for="topic-html">HTML5</label>
+
+                <input type="checkbox" id="topic-css" name="topics" value="css3">
+                <label for="topic-css">CSS3</label>
+
+                <input type="checkbox" id="topic-js" name="topics" value="javascript">
+                <label for="topic-js">JavaScript</label>
+            </div>
+
+            <!-- Multi-line Textarea -->
+            <div class="form-group">
+                <label for="bio">Prior Coding Experience:</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Briefly describe any projects or languages you know..."></textarea>
+            </div>
+        </fieldset>
+
+        <!-- SUBMIT & RESET BUTTONS -->
+        <div class="button-group">
+            <button type="submit">Register Now</button>
+            <button type="reset">Clear Form</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

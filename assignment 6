@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Course Syllabus</title>
+</head>
+
+<body>
+
+    <h1>Full-Stack Web Development Syllabus</h1>
+    <p>Course Code: <strong>CS-101</strong> | Duration: <strong>12 Weeks</strong></p>
+
+    <hr>
+
+    <!-- COURSE METADATA USING A DESCRIPTION LIST -->
+    <h2>Course Overview</h2>
+    <dl>
+        <dt><strong>Prerequisites</strong></dt>
+        <dd>Basic computer literacy and familiarity with a code editor (VS Code).</dd>
+
+        <dt><strong>Grading Breakdown</strong></dt>
+        <dd>
+            <!-- Unordered list nested inside a description definition -->
+            <ul>
+                <li>Weekly Lab Exercises: 40%</li>
+                <li>Midterm Project: 25%</li>
+                <li>Final Capstone Application: 35%</li>
+            </ul>
+        </dd>
+    </dl>
+
+    <hr>
+
+    <!-- MAIN SYLLABUS OUTLINE USING NESTED & MIXED LISTS -->
+    <h2>Module Breakdown</h2>
+
+    <!-- Top-level Ordered List for sequential modules -->
+    <ol>
+        <li>
+            <strong>Module 1: HTML5 Foundations</strong>
+            <!-- Nested Unordered List for topics inside Module 1 -->
+            <ul>
+                <li>Document Structure &amp; Boilerplate</li>
+                <li>Text Formatting &amp; Character Entities</li>
+                <li>Lists &amp; Navigation
+                    <!-- Deeper nested Ordered List for sub-steps -->
+                    <ol type="a">
+                        <li>Unordered Lists (<code>&lt;ul&gt;</code>)</li>
+                        <li>Ordered Lists (<code>&lt;ol&gt;</code>)</li>
+                        <li>Description Lists (<code>&lt;dl&gt;</code>)</li>
+                    </ol>
+                </li>
+                <li>Semantic HTML5 Elements</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Module 2: CSS3 &amp; Responsive Design</strong>
+            <ul>
+                <li>Selectors, Specificity &amp; Box Model</li>
+                <li>Layout Systems
+                    <ul>
+                        <li>Flexbox for 1D Layouts</li>
+                        <li>CSS Grid for 2D Layouts</li>
+                    </ul>
+                </li>
+                <li>Media Queries &amp; Mobile-First Design</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Module 3: JavaScript &amp; DOM Manipulation</strong>
+            <ul>
+                <li>Variables, Data Types &amp; Functions</li>
+                <li>DOM Selection &amp; Event Listeners</li>
+                <li>Fetching Data from APIs
+                    <ol type="i">
+                        <li>Understanding JSON</li>
+                        <li>Promises &amp; <code>async/await</code></li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+</body>
+
+</html>

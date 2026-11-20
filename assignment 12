@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Semantic Table Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 750px;
+            margin: 30px auto;
+            padding: 0 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Merges adjacent cell borders into a single line */
+            margin-top: 16px;
+        }
+
+        caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+            color: #0f172a;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        /* Header section styling */
+        thead th {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        /* Zebra striping for body rows */
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Footer section styling */
+        tfoot td, tfoot th {
+            background-color: #e2e8f0;
+            font-weight: bold;
+            color: #0f172a;
+        }
+
+        .numeric {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Semantic HTML5 Table</h1>
+
+    <table>
+        <!-- 1. CAPTION: Must be the very first child inside <table> -->
+        <caption>Quarterly Web Development Course Enrollment (2026)</caption>
+
+        <!-- 2. TABLE HEADER: Column titles -->
+        <thead>
+            <tr>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Name</th>
+                <th scope="col" class="numeric">Students</th>
+                <th scope="col" class="numeric">Fee (&#8377;)</th>
+            </tr>
+        </thead>
+
+        <!-- 3. TABLE BODY: Main data rows -->
+        <tbody>
+            <tr>
+                <td>WD-101</td>
+                <td>HTML5 &amp; Semantic Structure</td>
+                <td class="numeric">45</td>
+                <td class="numeric">4,500</td>
+            </tr>
+            <tr>
+                <td>WD-102</td>
+                <td>CSS3 Layouts &amp; Flexbox</td>
+                <td class="numeric">38</td>
+                <td class="numeric">5,000</td>
+            </tr>
+            <tr>
+                <td>WD-103</td>
+                <td>JavaScript &amp; DOM Essentials</td>
+                <td class="numeric">42</td>
+                <td class="numeric">6,500</td>
+            </tr>
+        </tbody>
+
+        <!-- 4. TABLE FOOTER: Summary or total row -->
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Total Enrollment &amp; Average Fee</th>
+                <td class="numeric">125</td>
+                <td class="numeric">5,333</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

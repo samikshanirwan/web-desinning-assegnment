@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Text Formatting &amp; Entities</title>
+</head>
+
+<body>
+
+    <!-- 1. HEADING LEVELS (h1 is the largest/most important, h6 is the smallest) -->
+    <h1>Heading Level 1 (Main Title)</h1>
+    <h2>Heading Level 2 (Section Heading)</h2>
+    <h3>Heading Level 3 (Sub-section Heading)</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6</h6>
+
+    <hr>
+
+    <!-- 2. PARAGRAPHS & LINE BREAKS -->
+    <h2>Paragraphs</h2>
+    <p>This is a standard paragraph. Browsers automatically add a single blank line before and after a paragraph element.</p>
+    <p>You can also force a line break inside a paragraph<br>using the self-closing break tag.</p>
+
+    <hr>
+
+    <!-- 3. TEXT FORMATTING ELEMENTS -->
+    <h2>Text Formatting Elements</h2>
+    <p>
+        Use <strong>&lt;strong&gt;</strong> for important bold text, or <b>&lt;b&gt;</b> for purely visual bolding.<br>
+        Use <em>&lt;em&gt;</em> for emphasized italic text, or <i>&lt;i&gt;</i> for technical terms or thoughts.<br>
+        Use <mark>&lt;mark&gt;</mark> to highlight text.<br>
+        Use <small>&lt;small&gt;</small> for fine print or disclaimers.<br>
+        Use <del>&lt;del&gt;</del> to show deleted text and <ins>&lt;ins&gt;</ins> to show inserted text.<br>
+        Use <sub>&lt;sub&gt;</sub> for subscript (e.g., H<sub>2</sub>O) and <sup>&lt;sup&gt;</sup> for superscript (e.g., E = mc<sup>2</sup>).
+    </p>
+
+    <hr>
+
+    <!-- 4. CHARACTER ENTITIES -->
+    <h2>Character Entities</h2>
+    <p>Entities display reserved HTML characters and special symbols:</p>
+    <ul>
+        <li>Less than: &lt; (<code>&amp;lt;</code>)</li>
+        <li>Greater than: &gt; (<code>&amp;gt;</code>)</li>
+        <li>Ampersand: &amp; (<code>&amp;amp;</code>)</li>
+        <li>Double quote: &quot; (<code>&amp;quot;</code>)</li>
+        <li>Copyright: &copy; (<code>&amp;copy;</code>)</li>
+        <li>Registered trademark: &reg; (<code>&amp;reg;</code>)</li>
+        <li>Indian Rupee: &#8377; (<code>&amp;#8377;</code>)</li>
+        <li>Non-breaking space: Word1&nbsp;&nbsp;&nbsp;Word2 (<code>&amp;nbsp;</code> prevents automatic space collapsing)</li>
+    </ul>
+
+</body>
+
+</html>
